@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_create"
+    >
+
+    
+
+    <EditText
+        android:id="@+id/nama_barang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:inputType="text"
+        android:hint="@string/barang_hint"
+        android:ems="10"
+        android:background="#afffffff"
+         
+        >
+
+        <requestFocus />
+    </EditText>
+        <EditText
+        android:id="@+id/merk_barang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:inputType="text"
+        android:hint="@string/merk_hint"
+        android:ems="10"
+        android:background="#afffffff"
+         
+        >
+
+        <requestFocus />
+    </EditText>
+        <EditText
+        android:id="@+id/harga_barang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:inputType="number"
+        android:hint="@string/harga_hint"
+        android:ems="10"
+        android:background="#afffffff"
+         
+        >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/buttom_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tombol_submit"
+        />
+</LinearLayout>
