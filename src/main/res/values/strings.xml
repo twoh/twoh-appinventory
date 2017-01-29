@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">AppInventory</string>
+    <string name="nama_app">twoh.web.id</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">AppInventory</string>
+	<string name="barang_hint">Nama Barang</string>
+	<string name="harga_hint">Harga Barang</string>
+	<string name="merk_hint">Merk Barang</string>
+	<string name="tombol_submit">Submit</string>
+	<string name="tombol_tambah">Tambah Data</string>
+	<string name="tombol_lihat">Lihat Data</string>
+	<string name="title_view">Data Barang</string>
+	<string name="tombol_edit">Save</string>
+	<string name="tombol_cancel">Cancel</string>
+	<string name="tombol_dialog_edit">Edit</string>
+	<string name="tombol_dialog_delete">Delete</string>
+	<string name="title_edit">Edit Barang | ID : </string>
+</resources>
