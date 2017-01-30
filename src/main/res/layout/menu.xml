@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
     
     <TextView
         android:id="@+id/nama_app"
@@ -34,4 +34,14 @@
         android:layout_centerHorizontal="true"
         android:text="@string/tombol_lihat"
         />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ads_unit_id_banner">
+    </com.google.android.gms.ads.AdView>
 </RelativeLayout>

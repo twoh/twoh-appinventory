@@ -1,4 +1,4 @@
-package id.twooh.appinventory.activity;
+package id.web.twoh.appinventory.activity;
 
 
 import java.util.ArrayList;
@@ -13,9 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import id.twooh.appinventory.Barang;
-import id.twooh.appinventory.DBDataSource;
-import id.twooh.appinventory.R;
+import id.web.twoh.appinventory.Barang;
+import id.web.twoh.appinventory.DBDataSource;
+import id.web.twoh.appinventory.R;
 
 
 public class ViewData extends ListActivity implements AdapterView.OnItemLongClickListener {

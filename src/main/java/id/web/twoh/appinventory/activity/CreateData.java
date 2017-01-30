@@ -1,7 +1,6 @@
-package id.twooh.appinventory.activity;
+package id.web.twoh.appinventory.activity;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -9,9 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import id.twooh.appinventory.Barang;
-import id.twooh.appinventory.DBDataSource;
-import id.twooh.appinventory.R;
+import id.web.twoh.appinventory.Barang;
+import id.web.twoh.appinventory.DBDataSource;
+import id.web.twoh.appinventory.R;
+
 
 public class CreateData extends AppCompatActivity implements OnClickListener{
 

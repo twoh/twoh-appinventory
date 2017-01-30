@@ -1,4 +1,4 @@
-package id.twooh.appinventory.activity;
+package id.web.twoh.appinventory.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import id.twooh.appinventory.Barang;
-import id.twooh.appinventory.DBDataSource;
-import id.twooh.appinventory.R;
+import id.web.twoh.appinventory.Barang;
+import id.web.twoh.appinventory.DBDataSource;
+import id.web.twoh.appinventory.R;
+
 
 /**
  * Created by Hafizh Herdi on 1/28/2017.

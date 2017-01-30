@@ -1,4 +1,4 @@
-package id.twooh.appinventory;
+package id.web.twoh.appinventory;
 
 
 public class Barang {
