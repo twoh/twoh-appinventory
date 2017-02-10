@@ -1,7 +1,6 @@
 package id.web.twoh.appinventory.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -13,7 +12,7 @@ import id.web.twoh.appinventory.DBDataSource;
 import id.web.twoh.appinventory.R;
 
 
-public class CreateData extends AppCompatActivity implements OnClickListener{
+public class CreateData extends BaseAdsActivity implements OnClickListener{
 
 	//inisilisasi elemen-elemen pada layout
 	private Button buttonSubmit;
@@ -27,7 +26,8 @@ public class CreateData extends AppCompatActivity implements OnClickListener{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_data);
-        
+		loadAdsRequest();
+
         buttonSubmit = (Button) findViewById(R.id.buttom_submit);
         buttonSubmit.setOnClickListener(this);
         edNama = (EditText) findViewById(R.id.nama_barang);
@@ -66,7 +66,7 @@ public class CreateData extends AppCompatActivity implements OnClickListener{
 			case R.id.buttom_submit:
 				// insert data barang baru
 				barang = dataSource.createBarang(nama, merk, harga);
-				
+				decideToDisplay();
 				//konfirmasi kesuksesan
 				Toast.makeText(this, "masuk Barang\n" +
 						"nama" + barang.getNama_barang() +

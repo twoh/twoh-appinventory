@@ -7,14 +7,23 @@ import android.app.Dialog;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import id.web.twoh.appinventory.Barang;
 import id.web.twoh.appinventory.DBDataSource;
+import id.web.twoh.appinventory.MainApplication;
 import id.web.twoh.appinventory.R;
 
 
@@ -27,11 +36,16 @@ public class ViewData extends ListActivity implements AdapterView.OnItemLongClic
     private ArrayList<Barang> values;
     private Button editButton;
     private Button delButton;
+    private InterstitialAd interstitialAd;
+    private static final String TAG = ListActivity.class.getSimpleName();
+    private int counter = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewdata);
+        loadAdsRequest();
+        initInterstitial();
         dataSource = new DBDataSource(this);
         // buka kontroller
         dataSource.open();
@@ -54,8 +68,18 @@ public class ViewData extends ListActivity implements AdapterView.OnItemLongClic
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Barang barang = (Barang) getListAdapter().getItem(position);
                 switchToGetData(barang.getId());
+                decideToDisplay();
             }
         });
+
+
+    }
+
+    protected void loadAdsRequest(){
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        mAdView.loadAd(adRequest);
     }
 
     //apabila ada long click
@@ -63,6 +87,7 @@ public class ViewData extends ListActivity implements AdapterView.OnItemLongClic
     public boolean onItemLongClick(final AdapterView<?> adapter, View v, int pos,
                                    final long id) {
 
+        decideToDisplay();
         //tampilkan alert dialog
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_view);
@@ -77,6 +102,7 @@ public class ViewData extends ListActivity implements AdapterView.OnItemLongClic
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        decideToDisplay();
                         // TODO Auto-generated method stub
                         switchToEdit(b.getId());
                         dialog.dismiss();
@@ -89,6 +115,7 @@ public class ViewData extends ListActivity implements AdapterView.OnItemLongClic
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        decideToDisplay();
                         // Delete barang
                         dataSource.deleteBarang(b.getId());
                         dialog.dismiss();
@@ -139,6 +166,10 @@ public class ViewData extends ListActivity implements AdapterView.OnItemLongClic
     protected void onResume() {
         dataSource.open();
         super.onResume();
+        Tracker tracker = ((MainApplication)getApplication()).getDefaultTracker();
+        Log.i(TAG, "View screen name: " + this.getClass().getSimpleName());
+        tracker.setScreenName("Screen " + this.getClass().getSimpleName());
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override
@@ -147,4 +178,44 @@ public class ViewData extends ListActivity implements AdapterView.OnItemLongClic
         super.onPause();
     }
 
+    protected void initInterstitial(){
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId(getString(R.string.ads_unit_id_interstitial));
+
+        interstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                loadInterstitial();
+            }
+        });
+
+        loadInterstitial();
+    }
+
+    protected void decideToDisplay(){
+        counter++;
+        Log.v(TAG, "ads matdes counter display "+counter);
+        if(counter==2)
+        {
+            Log.v(TAG, "ads matdes counter display displayed "+counter);
+            displayInterstitial();
+            counter = 0;
+        }
+    }
+
+    protected void displayInterstitial() {
+        if (interstitialAd != null && interstitialAd.isLoaded()) {
+            interstitialAd.show();
+        } else {
+            loadInterstitial();
+        }
+    }
+
+    private void loadInterstitial() {
+
+        if (!interstitialAd.isLoading() && !interstitialAd.isLoaded()) {
+            AdRequest adRequest = new AdRequest.Builder().build();
+            interstitialAd.loadAd(adRequest);
+        }
+    }
 }

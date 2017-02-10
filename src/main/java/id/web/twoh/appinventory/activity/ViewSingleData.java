@@ -1,7 +1,6 @@
 package id.web.twoh.appinventory.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,12 +11,13 @@ import id.web.twoh.appinventory.R;
  * Created by Hafizh Herdi on 1/29/2017.
  */
 
-public class ViewSingleData extends AppCompatActivity {
+public class ViewSingleData extends BaseAdsActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_single_data);
+        loadAdsRequest();
 
         TextView tvNama = (TextView) findViewById(R.id.tv_nama_barang);
         TextView tvMerk = (TextView) findViewById(R.id.tv_merk_barang);
@@ -32,6 +32,7 @@ public class ViewSingleData extends AppCompatActivity {
         buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                decideToDisplay();
                 finish();
             }
         });

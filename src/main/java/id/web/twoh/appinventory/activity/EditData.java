@@ -2,7 +2,6 @@ package id.web.twoh.appinventory.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +16,7 @@ import id.web.twoh.appinventory.R;
  * Created by Hafizh Herdi on 1/28/2017.
  */
 
-public class EditData extends AppCompatActivity implements View.OnClickListener {
+public class EditData extends BaseAdsActivity implements View.OnClickListener {
 
     private DBDataSource dataSource;
 
@@ -41,6 +40,7 @@ public class EditData extends AppCompatActivity implements View.OnClickListener 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_data);
+        loadAdsRequest();
         //inisialisasi variabel
         edNama = (EditText) findViewById(R.id.editText_nama);
         edHarga = (EditText) findViewById(R.id.editText_harga);
@@ -71,6 +71,7 @@ public class EditData extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         // TODO Auto-generated method stub
+        decideToDisplay();
         switch(v.getId())
         {
             // apabila tombol save diklik (update barang)

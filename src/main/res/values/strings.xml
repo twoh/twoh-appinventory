@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">AppInventory</string>
-    <string name="nama_app">twoh.web.id</string>
+    <string name="nama_app">twoh.co</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">AppInventory</string>
@@ -10,6 +10,7 @@
 	<string name="tombol_submit">Submit</string>
 	<string name="tombol_tambah">Tambah Data</string>
 	<string name="tombol_lihat">Lihat Data</string>
+	<string name="tombol_about">Read Tutorial</string>
 	<string name="title_view">Data Barang</string>
 	<string name="tombol_edit">Save</string>
 	<string name="tombol_cancel">Cancel</string>
@@ -17,4 +18,5 @@
 	<string name="tombol_dialog_delete">Delete</string>
 	<string name="title_edit">Edit Barang | ID : </string>
 	<string name="ads_unit_id_banner">ca-app-pub-6916955256570875/8144163356</string>
+	<string name="ads_unit_id_interstitial">ca-app-pub-6916955256570875/7643988958</string>
 </resources>

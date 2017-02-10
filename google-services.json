@@ -1,0 +1,111 @@
+{
+  "project_info": {
+    "project_number": "280698317344",
+    "project_id": "twohsengineering"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280698317344:android:4fc7b5c7f2124f40",
+        "android_client_info": {
+          "package_name": "id.web.twoh.maps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280698317344-t716farff402ug1uh80lrvd4feprkrbt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_Wd4CHvKS1PicesiRoUHOW7eGT91OCiU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-48210330-3"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280698317344:android:dce743f73a7e615e",
+        "android_client_info": {
+          "package_name": "id.web.twoh.www.zakatpal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280698317344-t716farff402ug1uh80lrvd4feprkrbt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_Wd4CHvKS1PicesiRoUHOW7eGT91OCiU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-48210330-4"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280698317344:android:478de3a94371c3c1",
+        "android_client_info": {
+          "package_name": "id.web.twoh.appinventory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280698317344-t716farff402ug1uh80lrvd4feprkrbt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_Wd4CHvKS1PicesiRoUHOW7eGT91OCiU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-48210330-5"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
